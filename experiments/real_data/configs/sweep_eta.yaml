@@ -1,0 +1,5 @@
+experiment: eta_grid
+script: src/pdvi/models/train_graph.py
+eta_m_values: [2e-2, 4e-2, 8e-2, 1e-1]
+eta_s_values: [2e-1, 4e-1, 8e-1, 1]
+output_file: experiments/real_data/results/grid_eta_results.txt

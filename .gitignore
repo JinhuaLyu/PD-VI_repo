@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Local env
+.venv/
+
+# Experiment outputs
+experiments/real_data/results/*.pt
+experiments/real_data/results/*.npy
+experiments/real_data/results/*.txt
+experiments/real_data/figures/*
+!experiments/real_data/figures/.gitkeep
+experiments/real_data/logs/*
+!experiments/real_data/logs/.gitkeep
+
+# Large generated data artifacts
+experiments/real_data/data/processed/*.pt
+experiments/real_data/data/processed/*.h5ad
+experiments/real_data/data/intermediate/*
+!experiments/real_data/data/intermediate/.gitkeep

@@ -1,0 +1,4 @@
+name: mouse_embryo_e165_e1s3
+raw_h5ad: experiments/real_data/data/raw/Mouse_embryo_E165_E1S3.h5ad
+processed_h5ad: experiments/real_data/data/processed/Mouse_embryo_E165_E1S3_prep.h5ad
+tensor_template: experiments/real_data/data/processed/tensor_pca_xy_true_initial_E165_E1S3_seed_{seed}.pt

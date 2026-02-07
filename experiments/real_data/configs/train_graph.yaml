@@ -1,0 +1,48 @@
+experiment: train_graph_default
+script: src/pdvi/models/train_graph.py
+seed: 1
+seeds: [1, 2, 3, 4, 5]
+
+algorithm: ours
+
+optimization:
+  eta_m: 2e-2
+  eta_s: 2e-1
+  inner_seed_offset: 20
+  max_iter: 20000
+  local_num_steps: 15
+  local_newton_steps: 5
+
+patch:
+  nx: 5
+  ny: 5
+
+temperature:
+  T: 1e-4
+  T_init: 1.0
+  anneal_iters: 1
+
+graph:
+  neighbors_num: 25
+  lambda_similarity: 1.0
+  weights_scale: 0.005
+
+logging:
+  print_every: 10
+  grad_every: 100
+
+runtime:
+  device: cuda
+  eps: 1e-12
+
+data:
+  tensor_template: experiments/real_data/data/processed/tensor_pca_xy_true_initial_E165_E1S3_seed_{seed}.pt
+  weights_template: experiments/real_data/data/intermediate/weights_{neighbors_num}_lambda_{lambda_similarity}_E165_E1S3_seed_{seed}.pt
+
+output:
+  run_dir_template: experiments/real_data/results/preconditioned_{max_iter}_seed_{seed}
+  output_prefix_template: results_ours_{max_iter}_seed_{seed}
+  labels_fig_name: final_labels.png
+  results_dir: experiments/real_data/results
+  figures_dir: experiments/real_data/figures
+  logs_dir: experiments/real_data/logs
